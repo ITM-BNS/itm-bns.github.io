@@ -19,6 +19,9 @@ jobs:
       run: |
         npm ci
         CI=false npm run build
+    - name: Create 404.html for github page
+      run: |
+        cp build/index.html build/404.html
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
