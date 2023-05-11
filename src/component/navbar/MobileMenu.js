@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
 import {
     IconButton,
     List,
@@ -10,10 +9,11 @@ import {
     SwipeableDrawer,
     Divider,
     Toolbar,
+    ListItemButton,
 } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import MenuIcon from '@mui/icons-material/Menu'
-import { links } from '../Sidebar'
+import SidebarItem from '../sidebar/SidebarItem'
 
 const MobileMenu = () => {
     const { t } = useTranslation()
@@ -26,6 +26,7 @@ const MobileMenu = () => {
     const handleDrawerClose = () => {
         setOpen(false)
     }
+
     return (
         <div>
             <IconButton color="inherit" onClick={handleDrawerOpen} size="large">
@@ -34,27 +35,33 @@ const MobileMenu = () => {
             <SwipeableDrawer open={open} onClose={handleDrawerClose} onOpen={handleDrawerOpen}>
                 <Toolbar />
                 <Divider />
-                <List>
-                    {links.map((link) => (
-                        <Link key={link.id} to={link.to} style={{ textDecoration: 'none', color: 'black' }}>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <img alt={link.text} src={link.icon} height="20" width="20" />
-                                </ListItemIcon>
-                                <ListItemText>{t(link.text)}</ListItemText>
-                            </ListItem>
-                        </Link>
-                    ))}
+                <List onClick={handleDrawerClose} onKeyDown={handleDrawerClose}>
+                    <SidebarItem />
                     <ListItem
-                        button
+                        disablePadding
                         onClick={() => {
                             window.open('https://github.com/itrustmachines/spo-verification-program', '_blank')
                         }}
                     >
-                        <ListItemIcon>
-                            <GitHubIcon style={{ fill: '#4b4b4b' }} alt="gitHubIcon" height="20" width="20" />
-                        </ListItemIcon>
-                        <ListItemText>{t('Verification Program Source Code')}</ListItemText>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <GitHubIcon style={{ fill: '#4b4b4b' }} alt="gitHubIcon" height="20" width="20" />
+                            </ListItemIcon>
+                            <ListItemText>{t('Verification Program Java Source Code')}</ListItemText>
+                        </ListItemButton>
+                    </ListItem>
+                    <ListItem
+                        disablePadding
+                        onClick={() => {
+                            window.open('https://github.com/ITM-BNS/itm-bns.github.io', '_blank')
+                        }}
+                    >
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <GitHubIcon style={{ fill: '#4b4b4b' }} alt="gitHubIcon" height="20" width="20" />
+                            </ListItemIcon>
+                            <ListItemText>{t('Verification Javascript Source Code')}</ListItemText>
+                        </ListItemButton>
                     </ListItem>
                 </List>
             </SwipeableDrawer>
