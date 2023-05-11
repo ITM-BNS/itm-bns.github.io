@@ -81,7 +81,8 @@
     "The Proof had been modified, the link might be invalid": "證據被修改，連結可能失效",
     "The Proof had been modified, the link might be invalid or the content might not be reliable": "證據被修改，連結可能失效或內容無法信任",
     "Proof Error": "證據錯誤",
-    "Verification Program Source Code": "驗證程式開源程式碼",
+    "Verification Program Java Source Code": "Java驗證程式開源程式碼",
+    "Verification Javascript Source Code": "Javascript驗證網頁開源程式碼",
     "Upload Folder to Verify": "上傳待驗證資料夾",
     "File Set Verification": "複數檔案驗證",
     "Folder to Verify": "待驗證檔案資料夾",
@@ -140,5 +141,6 @@
     "SN means Serial Number in each clearance": "SN 表示每個 Clearance 中的序列號",
     "Success": "成功",
     "View": "查看",
-    "Current Time": "現在時間"
+    "Current Time": "現在時間",
+    "Proof error, unable to verify files": "證據錯誤, 無法進行檔案驗證"
 }

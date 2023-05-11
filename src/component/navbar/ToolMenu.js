@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { MenuItem, Menu, IconButton, Typography } from '@mui/material'
+import { MenuItem, Menu, Typography, Button, Box } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import ToolIcon from '../../img/tool.svg'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 const ToolMenu = () => {
     const { t } = useTranslation()
@@ -18,16 +18,13 @@ const ToolMenu = () => {
     }
     return (
         <div>
-            <IconButton
-                aria-label="tool"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
-                size="large"
-            >
-                <img alt="ToolIcon" src={ToolIcon} height="25" />
-            </IconButton>
+            <Button onClick={handleMenu} sx={{ p: 0.5, minWidth: 20 }} color="inherit">
+                <GitHubIcon style={{ height: 25, fill: 'white' }} />
+                <Box ml={1} sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    Github
+                </Box>
+                <ExpandMoreIcon />
+            </Button>
             <Menu
                 id="tool-menu"
                 anchorEl={anchorEl}
@@ -51,7 +48,17 @@ const ToolMenu = () => {
                     }}
                 >
                     <GitHubIcon style={{ marginRight: '10px', fill: '#4b4b4b' }} />
-                    <Typography variant="body1">{t('Verification Program Source Code')}</Typography>
+                    <Typography variant="body1">{t('Verification Program Java Source Code')}</Typography>
+                </MenuItem>
+                <MenuItem
+                    onClick={(event) => {
+                        event.preventDefault()
+                        window.open('https://github.com/ITM-BNS/itm-bns.github.io')
+                        handleClose()
+                    }}
+                >
+                    <GitHubIcon style={{ marginRight: '10px', fill: '#4b4b4b' }} />
+                    <Typography variant="body1">{t('Verification Javascript Source Code')}</Typography>
                 </MenuItem>
             </Menu>
         </div>

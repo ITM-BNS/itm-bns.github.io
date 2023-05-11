@@ -81,7 +81,8 @@
     "The Proof had been modified, the link might be invalid": "The Proof had been modified, the link might be invalid",
     "The Proof had been modified, the link might be invalid or the content might not be reliable": "The Proof had been modified, the link might be invalid or the content might not be reliable",
     "Proof Error": "Proof Error",
-    "Verification Program Source Code": "Verification Program Source Code",
+    "Verification Program Java Source Code": "Verification Program Java Source Code",
+    "Verification Javascript Source Code": "Verification Javascript Source Code",
     "Upload Folder to Verify": "Upload Folder to Verify",
     "File Set Verification": "Multiple Files Verification",
     "Folder to Verify": "Folder to Verify",
@@ -140,5 +141,6 @@
     "SN means Serial Number in each clearance": "SN means Serial Number in each clearance",
     "Success": "Success",
     "View": "View",
-    "Current Time": "Current Time"
+    "Current Time": "Current Time",
+    "Proof error, unable to verify files": "Proof error, unable to verify files"
 }
