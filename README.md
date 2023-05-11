@@ -12,20 +12,24 @@ Please follow the steps before you run the program.
 
 1. Find `.env` file located in project root.
 2. Replace `{YOUR_PROJECT_ID}` with the project ID you obtained from the Infura website.
+
     ```
     REACT_APP_INFURA_PROJECT_ID={YOUR_PROJECT_ID}
     ```
+
     - Warning: Please refrain from modifying the variable naming as it may cause the program to not recognize the value.
-3. To install the package, enter the following command in the command line:
+
+3. (Optional) You may also change `REACT_APP_UPLOAD_MAX_SIZE` field in `.env` to adjust max accepted upload file size. Please note that this should match your server web configuration. The field is default to be 5GB.
+4. To install the package, enter the following command in the command line:
     ```
     npm install
     ```
-4. Then, enter the following command to start the program:
+5. Then, enter the following command to start the program:
     ```
     npm start
     ```
-5. Your program may now be accessible at http://localhost:3000. If the port is being used by another program, you can find the port being used by the verification program in the terminal window.
-6. Prepare your ITM Proof Token and begin your journey on the website!
+6. Your program may now be accessible at http://localhost:3000. If the port is being used by another program, you can find the port being used by the verification program in the terminal window.
+7. Prepare your ITM Proof Token and begin your journey on the website!
 
 ## How Can I Get My ITM Proof Token?
 
